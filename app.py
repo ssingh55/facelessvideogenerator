@@ -79,7 +79,7 @@ def generate_video():
     # final_clip_resource is not strictly needed as a variable if we only use it to call write_videofile
     # However, TextClip.set_audio returns the TextClip itself, modified. So txt_clip_resource becomes the final clip.
     try:
-        txt_clip_resource = TextClip(script, font="Arial", font_size=30, color='white', bg_color='black', size=(640, 480), method='caption')
+        txt_clip_resource = TextClip(txt=script, font="Arial", font_size=30, color='white', bg_color='black', size=(640, 480), method='caption')
         txt_clip_resource = txt_clip_resource.set_duration(audio_duration)
         txt_clip_resource = txt_clip_resource.set_pos('center')
 
