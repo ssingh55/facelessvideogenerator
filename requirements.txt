@@ -1,0 +1,4 @@
+Flask
+gTTS
+moviepy
+gunicorn
