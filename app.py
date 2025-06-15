@@ -80,7 +80,8 @@ def generate_video():
     # However, TextClip.set_audio returns the TextClip itself, modified. So txt_clip_resource becomes the final clip.
     try:
         txt_clip_resource = TextClip(text=script, font="Arial", font_size=30, color="white", bg_color="black", size=(640,480), method="caption")
-        txt_clip_resource = txt_clip_resource.set_duration(audio_duration)
+        txt_clip_resource.duration = audio_duration # Corrected line: direct attribute assignment
+        # set_pos returns a new clip, so the assignment is important.
         txt_clip_resource = txt_clip_resource.set_pos('center')
 
         # Create a new AudioFileClip instance for the composition.
